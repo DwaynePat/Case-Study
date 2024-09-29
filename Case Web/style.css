@@ -50,8 +50,8 @@ nav {
   display: block;
   width: 30px;
   height: 3px;
-  background-color: var(--color-w);
-  margin: 5px 0;
+  background-color: var(--accent-orange);
+  margin: 6px 0;
 }
 
 .nav-items {
