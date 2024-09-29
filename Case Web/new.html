@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFPS - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        
+        <section class="left-section">
+            
+            <nav>
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <!-- Nav items -->
+                <ul class="nav-items">
+                    <li><a href="https://efps.bir.gov.ph/eFPSIssuancesAndRulingsPage.html" target="_blank">Revenue Issuances</a></li>
+                    <li><a href="https://efps.bir.gov.ph/eFPSFAQ.html" target="_blank">FAQs</a></li>
+                    <li><a href="https://efps.bir.gov.ph/efps-war/efpsJobaids.xhtml" target="_blank">Job Aids</a></li>
+                    <li><a href="https://efps.bir.gov.ph/efpsDownloads.html" target="_blank">Downloads</a></li>
+                </ul>
+            </nav>
+
+            <div class="background-image">
+                <div class="overlay-text">
+                    <h1>EFPS</h1>
+                    <p>Electric Filing and Payment System</p>
+                </div>
+            </div>
+            <div class="announcement" id="announcement">
+                <h2>Announcement</h2>
+                <br>
+                <strong><em>Mandatory Designation of Taxpayer's Official Email</em></strong>
+                <p>
+                The designation of official e-mail address of the taxpayer
+                is mandatory. It shall be used as an additional manner of
+                serving BIR orders, notices, letters, communications and
+                other processes to the ta...
+                <a href="https://efps.bir.gov.ph/efps-war/NewsView?MESSAGE=The%20designation%20of%20official%20e-mail%20address%20of%20the%20taxpayer%20is%20mandatory.%20It%20shall%20be%20used%20as%20an%20additional%20manner%20of%20serving%20BIR%20orders,%20notices,%20letters,%20communications%20and%20other%20processes%20to%20the%20taxpayer.%20Service%20through%20this%20official%20e-mail%20address%20shall%20be%20presumed%20valid%20unless%20the%20taxpayer%20promptly%20informs%20BIR%20by%20updating%20his/her/its%20registration%20information%20with%20the%20Bureau." style="text-decoration: underline; font-style: italic" target="_blank">More</a>
+            </p>
+        </div>
+        </section>
+
+      
+        <section class="right-section">
+            <div class="logo-container">
+                <img src="BIR Logo.png" alt="Logo">
+            </div>
+            <div class="bir-main-button">
+                <a href="https://www.bir.gov.ph/home" class="bir-btn" target="_blank">BIR Main</a>
+            </div>
+            <div class="login-form">
+                <h2>ePFES Login</h2>
+                <form action="#">
+                    <label for="tin-number">TIN Number</label>
+                    <input type="text" id="tin-number" placeholder="123-456-789-000">
+                    
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Username">
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password">
+                    
+                    <button type="submit" class="login-btn">LOGIN</button>
+                </form>
+                <div class="extra-options">
+                    <a href="#">Forgot Password?</a> |
+                    <a href="#">Enroll to eFPS</a> |
+                    <a href="#">Help</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            const navItems = document.querySelector('.nav-items');
+            navItems.classList.toggle('show');
+
+            
+            const overlayText = document.querySelector('.overlay-text');
+            if (navItems.classList.contains('show')) {
+                overlayText.style.transform = 'translate(-50%, -30%)';
+            } else {
+                overlayText.style.transform = 'translate(-50%, -50%)'; 
+            }
+        });
+
+        
+        const navLinks = document.querySelectorAll('.nav-items a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const url = this.getAttribute('href'); 
+
+                
+                if (url.startsWith('http')) {
+                    window.open(url, '_blank');
+                } else {
+                    const targetSection = document.querySelector(url);
+
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
