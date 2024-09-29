@@ -5,8 +5,20 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-w: #fff;
+  --color-gray: #5c5c5c;
+  --color-offwhite: #f8f8f5;
+  --input-color: #d9d9d9;
+  --accent-blue: #0034ab;
+  --accent-orange: #ff5c00;
+  --font-big: "Konkhmer Sleokchher", system-ui;
+  --font-fancy: "Gentium Plus", system-ui;
+  --font-normal: "Geologica", sans-serif;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: system-ui;
 }
 
 main {
@@ -21,7 +33,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  color: #fff;
+  color: var(--color-w);
 }
 
 nav {
@@ -38,7 +50,7 @@ nav {
   display: block;
   width: 30px;
   height: 3px;
-  background-color: #fff;
+  background-color: var(--color-w);
   margin: 5px 0;
 }
 
@@ -60,7 +72,7 @@ nav {
 }
 
 .nav-items li a {
-  color: #fff;
+  color: var(--color-w);
   text-decoration: none;
   font-size: 1.2rem;
   display: block;
@@ -68,7 +80,7 @@ nav {
 }
 
 .nav-items li a:hover {
-  color: #ff6600;
+  color: var(--accent-orange);
 }
 
 .overlay-text {
@@ -78,20 +90,29 @@ nav {
   transform: translate(-50%, -50%);
   text-align: center;
   transition: transform 0.5s ease;
+  opacity: 0.6;
 }
 
 .overlay-text h1 {
-  font-size: 5rem;
+  font-size: 10rem;
   font-weight: bold;
+  font-family: var(--font-big);
 }
 
 .overlay-text p {
+  position: relative;
+  top: -5rem;
   font-size: 1.5rem;
+  font-family: var(--font-fancy);
+  font-style: italic;
 }
 
 .announcement {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
+  background-color: rgba(0, 51, 171, 0.32);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  letter-spacing: -0.48px;
+  padding: 2rem;
   font-size: 1.2rem;
   text-align: left;
   position: absolute;
@@ -99,12 +120,14 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
+  font-family: var(--font-fancy);
 }
 
 .right-section {
+  font-family: var(--font-normal);
   position: relative;
   flex: 1;
-  background-color: #f9f9f9;
+  background-color: var(--color-offwhite);
   padding: 40px;
   display: flex;
   align-items: center;
@@ -131,8 +154,8 @@ nav {
 }
 
 .bir-btn {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--accent-blue);
+  color: var(--color-w);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -141,10 +164,14 @@ nav {
 }
 
 .login-form {
-  background-color: #fff;
+  background-color: var(--color-w);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form .accent-text {
+  color: var(--accent-orange);
 }
 
 .login-form h2 {
@@ -161,15 +188,16 @@ nav {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 13px;
 }
 
 .login-btn {
-  background-color: #28a745;
-  color: white;
+  font-family: var(--font-normal);
+  background-color: var(--accent-orange);
+  color: var(--color-w);
   padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
   width: 100%;
 }
@@ -180,7 +208,7 @@ nav {
 }
 
 .extra-options a {
-  color: #007bff;
+  color: var(--color-gray);
   text-decoration: none;
 }
 
