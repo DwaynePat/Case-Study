@@ -14,6 +14,9 @@
   </head>
   <body>
     <main>
+      <div class="logo-container">
+        <img src="src/img/BIR Logo.png" alt="Logo" />
+      </div>
       <section class="left-section">
         <nav>
           <div class="hamburger-menu">
@@ -49,6 +52,14 @@
                 >Downloads</a
               >
             </li>
+            <li>
+              <a
+                href="https://www.bir.gov.ph/home"
+                class="bir-btn"
+                target="_blank"
+                >BIR Main</a
+              >
+            </li>
           </ul>
         </nav>
 
@@ -59,35 +70,47 @@
           </div>
         </div>
         <div class="announcement" id="announcement">
-          <h2>Announcement</h2>
-          <br />
-          <strong
-            ><em>Mandatory Designation of Taxpayer's Official Email</em></strong
-          >
-          <p>
-            The designation of official e-mail address of the taxpayer is
-            mandatory. It shall be used as an additional manner of serving BIR
-            orders, notices, letters, communications and other processes to the
-            ta...
-            <a
-              href="https://efps.bir.gov.ph/efps-war/NewsView?MESSAGE=The%20designation%20of%20official%20e-mail%20address%20of%20the%20taxpayer%20is%20mandatory.%20It%20shall%20be%20used%20as%20an%20additional%20manner%20of%20serving%20BIR%20orders,%20notices,%20letters,%20communications%20and%20other%20processes%20to%20the%20taxpayer.%20Service%20through%20this%20official%20e-mail%20address%20shall%20be%20presumed%20valid%20unless%20the%20taxpayer%20promptly%20informs%20BIR%20by%20updating%20his/her/its%20registration%20information%20with%20the%20Bureau."
-              style="text-decoration: underline; font-style: italic"
-              target="_blank"
-              >More</a
+          <img
+            src="src/img/arrow-left.png"
+            alt="Left arrow"
+            class="arrow-icon"
+          />
+          <div class="announcement-content">
+            <h2>Announcement</h2>
+            <strong
+              ><em
+                >Mandatory Designation of Taxpayer's Official Email</em
+              ></strong
             >
-          </p>
+            <p class="announcement-text">
+              <span>
+                The designation of official e-mail address of the taxpayer is
+                mandatory. It shall be used as an additional manner of serving
+                BIR orders, notices, letters, communications and other processes
+                to the taxpayers...
+                <a
+                  href="https://efps.bir.gov.ph/efps-war/NewsView?MESSAGE=The%20designation%20of%20official%20e-mail%20address%20of%20the%20taxpayer%20is%20mandatory.%20It%20shall%20be%20used%20as%20an%20additional%20manner%20of%20serving%20BIR%20orders,%20notices,%20letters,%20communications%20and%20other%20processes%20to%20the%20taxpayer.%20Service%20through%20this%20official%20e-mail%20address%20shall%20be%20presumed%20valid%20unless%20the%20taxpayer%20promptly%20informs%20BIR%20by%20updating%20his/her/its%20registration%20information%20with%20the%20Bureau."
+                  style="text-decoration: underline; font-style: italic"
+                  target="_blank"
+                  >More</a
+                ></span
+              >
+            </p>
+            <img
+              src="src/img/navigator-icon.png"
+              alt="Separator"
+              class="more-icon"
+            />
+          </div>
+          <img
+            src="src/img/arrow-right.png"
+            alt="Right arrow"
+            class="arrow-icon"
+          />
         </div>
       </section>
 
       <section class="right-section">
-        <div class="logo-container">
-          <img src="src/img/BIR Logo.png" alt="Logo" />
-        </div>
-        <div class="bir-main-button">
-          <a href="https://www.bir.gov.ph/home" class="bir-btn" target="_blank"
-            >BIR Main</a
-          >
-        </div>
         <div class="login-form">
           <h2><span class="accent-text">eFES</span> Login</h2>
           <form action="#">
@@ -116,13 +139,6 @@
         .addEventListener("click", function () {
           const navItems = document.querySelector(".nav-items");
           navItems.classList.toggle("show");
-
-          const overlayText = document.querySelector(".overlay-text");
-          if (navItems.classList.contains("show")) {
-            overlayText.style.transform = "translate(-50%, -30%)";
-          } else {
-            overlayText.style.transform = "translate(-50%, -50%)";
-          }
         });
 
       const navLinks = document.querySelectorAll(".nav-items a");
