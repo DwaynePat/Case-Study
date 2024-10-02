@@ -170,6 +170,7 @@ p {
 }
 
 .arrow-icon {
+  cursor: pointer;
   align-items: center;
   aspect-ratio: 0.5;
   object-fit: contain;
