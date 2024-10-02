@@ -12,6 +12,8 @@
   --input-color: #d9d9d9;
   --accent-blue: #0034ab;
   --accent-orange: #ff5c00;
+  --accent-orange-onhover: #fa7325;
+  --accent-orange-onclick: #af4000;
   --font-big: "Konkhmer Sleokchher", system-ui;
   --font-fancy: "Gentium Plus", system-ui;
   --font-normal: "Geologica", sans-serif;
@@ -236,6 +238,18 @@ p {
   border-radius: 30px;
   cursor: pointer;
   width: 100%;
+}
+
+.login-btn:hover {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background-color: var(--accent-orange-onhover);
+}
+
+.login-btn:active {
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  background-color: var(--accent-orange-onclick);
 }
 
 .extra-options {
