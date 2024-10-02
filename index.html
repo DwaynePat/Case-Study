@@ -115,13 +115,23 @@
           <h2><span class="accent-text">eFPS</span> Login</h2>
           <form action="#">
             <label for="tin-number">TIN Number</label>
-            <input type="number" id="tin-number" placeholder="123-456-789-000" required/>
+            <input
+              type="number"
+              id="tin-number"
+              placeholder="123-456-789-000"
+              required
+            />
 
             <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Username" required/>
+            <input type="text" id="username" placeholder="Username" required />
 
             <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Password" required/>
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
 
             <button type="submit" class="login-btn">LOGIN</button>
           </form>
@@ -136,10 +146,23 @@
     <script>
       document
         .querySelector(".hamburger-menu")
-        .addEventListener("click", function () {
+        .addEventListener("click", function (e) {
+          e.stopPropagation(); // Prevent the click event from bubbling up to the document
           const navItems = document.querySelector(".nav-items");
           navItems.classList.toggle("show");
         });
+
+      document.addEventListener("click", function (e) {
+        const navItems = document.querySelector(".nav-items");
+        const isClickInsideMenu = navItems.contains(e.target);
+        const isClickOnHamburger = document
+          .querySelector(".hamburger-menu")
+          .contains(e.target);
+
+        if (!isClickInsideMenu && !isClickOnHamburger) {
+          navItems.classList.remove("show");
+        }
+      });
 
       const navLinks = document.querySelectorAll(".nav-items a");
 
