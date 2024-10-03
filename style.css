@@ -80,6 +80,9 @@ nav {
   height: 3px;
   background-color: var(--accent-orange);
   margin: 6px 0;
+
+  transition: background-color, scale, box-shadow;
+  transition-duration: 0.5s;
 }
 
 .hamburger-menu:hover span {
