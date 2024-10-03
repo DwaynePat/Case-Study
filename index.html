@@ -19,10 +19,12 @@
       </div>
       <section class="left-section">
         <nav>
-          <div class="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+          <div class="hamburger-container">
+            <div class="hamburger-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
           <!-- Nav items -->
           <ul class="nav-items">
@@ -149,42 +151,21 @@
         .addEventListener("click", function (e) {
           e.stopPropagation(); // Prevent the click event from bubbling up to the document
           const navItems = document.querySelector(".nav-items");
+          const hamburgerMenu = document.querySelector(".hamburger-menu");
           navItems.classList.toggle("show");
+          hamburgerMenu.classList.toggle("active");
         });
 
       document.addEventListener("click", function (e) {
         const navItems = document.querySelector(".nav-items");
+        const hamburgerMenu = document.querySelector(".hamburger-menu");
         const isClickInsideMenu = navItems.contains(e.target);
-        const isClickOnHamburger = document
-          .querySelector(".hamburger-menu")
-          .contains(e.target);
+        const isClickOnHamburger = hamburgerMenu.contains(e.target);
 
         if (!isClickInsideMenu && !isClickOnHamburger) {
           navItems.classList.remove("show");
+          hamburgerMenu.classList.remove("active");
         }
-      });
-
-      const navLinks = document.querySelectorAll(".nav-items a");
-
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          const url = this.getAttribute("href");
-
-          if (url.startsWith("http")) {
-            window.open(url, "_blank");
-          } else {
-            const targetSection = document.querySelector(url);
-
-            if (targetSection) {
-              targetSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }
-          }
-        });
       });
     </script>
   </body>

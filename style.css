@@ -60,6 +60,16 @@ nav {
   left: 20px;
 }
 
+.hamburger-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9;
+  background-color: #0033ab59;
+  padding: 0.3em;
+  border-radius: 5px;
+}
+
 .hamburger-menu {
   cursor: pointer;
 }
@@ -72,20 +82,38 @@ nav {
   margin: 6px 0;
 }
 
+.hamburger-menu:hover span {
+  transition-property: background-color, scale, box-shadow;
+  transition-duration: 0.5s;
+  background-color: var(--accent-orange-onhover);
+  scale: 105%;
+  box-shadow: 0 0 3px var(--accent-orange);
+}
+
 .nav-items {
-  position: relative;
+  position: fixed;
+  top: 65px;
+  left: 20px;
   list-style: none;
-  margin-top: 10px;
-  display: none;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 1em;
   border-radius: 1em;
   z-index: 999;
+
+  transform-origin: top left;
+  transform: scale(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out,
+    visibility 0s linear 0.3s;
 }
 
 .nav-items.show {
-  display: block;
-  z-index: 999;
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out,
+    visibility 0s linear;
 }
 
 .nav-items li {
@@ -114,7 +142,7 @@ nav {
   transform: translate(-50%, -30%);
   transition: 0.5s ease;
   text-align: center;
-  opacity: 0.6;
+  opacity: 0.8;
   z-index: 1;
 }
 
@@ -128,8 +156,7 @@ nav {
   position: relative;
   top: -5rem;
   font-size: 1.5rem;
-  font-family: var(--font-fancy);
-  font-style: italic;
+  font-family: var(--font-normal);
 }
 
 .announcement {
